@@ -1,0 +1,47 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="wrapper">
+  <div class="one">
+      <form #form="ngForm" (ngSubmit) = "addTodo(form.value)">
+          <div class="form-group">
+            <label for="todo">ToDo</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" [(ngModel)]='text' rows="3" name="text" ngModel></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-ng" [disabled]="!form.valid">Submit</button>
+      </form>
+  </div>
+  <div class="two">
+      <div *ngIf="(todos$ | async)?.length==0" class="alert">
+            No ToDos, add one to get Started.
+      </div>
+      <div *ngFor="let item of (todos$ | async)" class="alert">
+            <div>
+                <span>{{item.text}}</span>
+            </div>
+            <div class="remove-icon" (click)="deleteToDo(item)">X</div>
+      </div>
+  </div>
+  <div class="three">
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Type</th>
+            <th scope="col">Category</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngIf="(colors$ | async)?.length==0" class="alert">
+                <td colspan="4" style="text-align:center;">No Colors, add one to get Started.</td>
+            </tr>
+            <tr *ngFor="let color of (colors$ | async)" class="alert">
+                <th scope="row">{{color.id}}</th>
+                <td>{{color.color}}</td>
+                <td>{{color.type}}</td>
+                <td>{{color.category}}</td>
+            </tr>
+        </tbody>
+    </table>
+  </div>
+</div>
+

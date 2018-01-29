@@ -1,0 +1,70 @@
+/* You can add global styles to this file, and also import other style files */
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+    background-color: BlueViolet;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.one {
+    grid-column: 1/2;
+    grid-row: 1;
+    background-color: #6a1eb1;
+    opacity: 0.8;
+    margin: 1em;
+    box-shadow: 1px 1px 1px 1px #7020bad8; 
+    padding: 1em;  
+}
+
+.two {
+    grid-column: 2/5;
+    grid-row: 1;
+    margin: 1em;
+}
+
+.three {
+    grid-column: 1/5;
+    grid-row: 2;
+    align-self: center;
+    padding: 2em;
+}
+
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+.example-full-width{
+    width: 100%;
+}
+
+.alert{
+    color: #fff;
+    background-color: #7020ba;
+    border-color: #7020ba;
+    box-shadow: 1px 1px 1px 1px #7020bad8;
+}
+
+.thead-dark {
+    box-shadow: 1px 1px 1px 1px #37404a;
+}
+
+.btn-ng {
+    background-color: #511788;
+    border-color: #511788;
+    box-shadow: 1px 1px 1px #5c1a99;
+}
+
+.two > .alert {
+    display: grid;
+    grid-template-columns: 99% 1%;
+}
+
+.two > .alert > .remove-icon {
+    cursor: pointer;
+}
